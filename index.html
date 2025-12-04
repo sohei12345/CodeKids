@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeKids</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* カスタムスクロールバーで遊び心をプラス */
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: #6366f1; /* Indigo */
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <header class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+            <a href="#" class="text-3xl font-extrabold text-indigo-600 tracking-wider">
+                &lt;CodeKids&gt;
+            </a>
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="#courses" class="hover:text-indigo-600 transition duration-300">コース</a>
+                <a href="#tutors" class="hover:text-indigo-600 transition duration-300">講師紹介</a>
+                <a href="#schedule" class="hover:text-indigo-600 transition duration-300">スケジュールと料金</a>
+                <a href="#contact" class="px-4 py-2 text-white bg-green-500 rounded-full hover:bg-green-600 transition duration-300 shadow-md">今すぐお問い合わせ</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+                <a href="#courses" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-indigo-50 w-full text-center">コース</a>
+                <a href="#tutors" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-indigo-50 w-full text-center">講師紹介</a>
+                <a href="#schedule" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-indigo-50 w-full text-center">スケジュールと料金</a>
+                <a href="#contact" class="block px-3 py-2 rounded-full text-white bg-green-500 hover:bg-green-600 transition duration-300 mt-2 w-3/4 text-center">今すぐお問い合わせ</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="relative pt-16 pb-24 lg:pt-24 lg:pb-32 bg-indigo-50 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
+                    <div class="lg:col-span-6 text-center lg:text-left">
+                        <span class="text-sm font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-200 py-1 px-3 rounded-full shadow-inner">対象年齢 4-16歳</span>
+                        <h1 class="mt-4 text-5xl sm:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight">
+                            <span class="text-indigo-600">英語でプログラミングを楽しく学ぶ</span>
+                        </h1>
+                        <p class="mt-6 text-xl text-gray-600">
+                            クラスでは日本語をほぼ話さず、プログラミングの基礎を一緒に楽しく学ぶことで英語とプログラミングを同時にしっかりと学習することができます。
+                        </p>
+                        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#courses" class="px-8 py-4 text-lg font-bold text-white bg-indigo-600 rounded-xl hover:bg-indigo-700 transition duration-300 shadow-xl shadow-indigo-300/50 transform hover:scale-[1.02]">
+                                コース情報
+                            </a>
+                            <a href="#contact" class="px-8 py-4 text-lg font-bold text-indigo-600 bg-white border-2 border-indigo-600 rounded-xl hover:bg-indigo-50 transition duration-300 shadow-xl transform hover:scale-[1.02]">
+                                無料体験予約
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6 mt-12 lg:mt-0 relative">
+                        <div class="relative w-full h-80 bg-gray-900 rounded-3xl shadow-2xl overflow-hidden">
+                            <iframe src="https://www.youtube.com/embed/kCc8FmEb1nY?start=496&autoplay=0&mute=1&loop=1&playlist=kJQMO5MuWRs"
+                                title="CodeKidsの紹介ビデオ" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+                                class="absolute top-0 left-0 w-full h-full"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-12">CodeKidsを選ぶ理由</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-8 bg-yellow-50 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-yellow-500">
+                        <span class="text-4xl">📚</span>
+                        <h3 class="text-xl font-bold mt-4 mb-2 text-gray-900">プロジェクトベース学習</h3>
+                        <p class="text-gray-600">実際にゲームやアプリを構築し、学んだ概念を即座に応用することで楽しくスキルが定着します。</p>
+                    </div>
+                    <div class="p-8 bg-green-50 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-green-500">
+                        <span class="text-4xl">🌎</span>
+                        <h3 class="text-xl font-bold mt-4 mb-2 text-gray-900">外国人英語講師</h3>
+                        <p class="text-gray-600">日本語をほぼ離せない講師の元でプログラミングを学ぶことでおのずと英語、コミュニーケーション能力が培われます。</p>
+                    </div>
+                    <div class="p-8 bg-indigo-50 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-indigo-500">
+                        <span class="text-4xl">🧠</span>
+                        <h3 class="text-xl font-bold mt-4 mb-2 text-gray-900">クリティカルシンキング</h3>
+                        <p class="text-gray-600">プログラミングは論理的思考力、問題解決能力を養います。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="courses" class="py-20 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-4xl font-extrabold text-gray-900 mb-16">コース概要</h2>
+                <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
+                    <div class="bg-white rounded-3xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition duration-500 border-t-8 border-yellow-500">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-yellow-600">ブロックプログラミング (対象年齢 5-9歳)</h3>
+                            <p class="mt-2 text-gray-600">最初のステップに最適。SCRATCHをというツールを使って、簡単なPC操作（ドラッグ＆ドロップ）で対話型ストーリーやゲームを制作します。</p>
+                            <ul class="mt-4 text-sm text-gray-500 space-y-2">
+                                <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 14.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>タイピング不要</li>
+                                <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 14.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>基本的な論理に集中</li>
+                            </ul>
+                            <div class="mt-6 text-center">
+                                <a href="#contact" class="text-yellow-600 font-bold hover:text-yellow-700 transition duration-300">詳細を見る &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-3xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition duration-500 border-t-8 border-indigo-600">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-indigo-600">Python基礎→応用(対象年齢 10-16歳)</h3>
+                            <p class="mt-2 text-gray-600">世界で最も人気のある言語。ゲームの作成、データ分析ツール、シンプルな機械学習モデルを構築します。</p>
+                            <ul class="mt-4 text-sm text-gray-500 space-y-2">
+                                <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-indigo-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 14.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>実践的なテキストコーディング</li>
+                                <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-indigo-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 14.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>中級レベルの概念</li>
+                            </ul>
+                            <div class="mt-6 text-center">
+                                <a href="#contact" class="text-indigo-600 font-bold hover:text-indigo-700 transition duration-300">詳細を見る &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-3xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition duration-500 border-t-8 border-green-500">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-green-600">Webページ作成(対象年齢 10-16歳)</h3>
+                            <p class="mt-2 text-gray-600">JavaScript,HTML、CSSなどの言語を使用しウェブサイトを作成、サーバー上に実装します。</p>
+                            <ul class="mt-4 text-sm text-gray-500 space-y-2">
+                                <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 14.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>フルスタックの基礎</li>
+                                <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 14.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>ポートフォリオにできるプロジェクト</li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="tutors" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-12">講師紹介</h2>
+                <div class="flex justify-center">
+                    <div class="p-6 bg-gray-50 rounded-2xl shadow-lg border-b-4 border-indigo-400 max-w-sm w-full">
+                        <img class="w-24 h-24 mx-auto rounded-full object-cover mb-4 shadow-lg border-2 border-indigo-400" src="./images/miamor.jpg" alt="アレックス P. 先生のプロフィール画像" onerror="this.onerror=null;this.src='https://placehold.co/96x96/9ca3af/ffffff?text=A'">
+                        <h3 class="text-xl font-bold text-gray-900">パオラ先生</h3>
+                        <p class="text-indigo-600 font-medium">Python, JavaScriptなど専門</p>
+                        <p class="mt-3 text-sm text-gray-600">コロンビアで物理・教育学の学位を取得後、約3年ほどプログラミングの教師として勤務。アメリカには2年ほど在住経験あり</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="schedule" class="py-20 bg-indigo-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-4xl font-extrabold text-gray-900 mb-16">スケジュール料金設定</h2>
+                <div class="flex flex-col lg:flex-row gap-10">
+                    <div class="lg:w-1/2 p-8 bg-white rounded-2xl shadow-xl">
+                        <h3 class="text-2xl font-bold text-indigo-700 mb-4">柔軟な授業時間</h3>
+                        <ul class="space-y-4 text-gray-600">
+                            <li class="flex items-start">
+                                <span class="text-indigo-600 font-extrabold text-xl mr-3">&gt;</span>
+                                <div>
+                                    <p class="font-bold">ブロックプログラミング (対象年齢 5-9歳)</p>
+                                    <p class="text-sm">4:00 PM - 7:00 PM（月－金）30分</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-indigo-600 font-extrabold text-xl mr-3">&gt;</span>
+                                <div>
+                                    <p class="font-bold">Python基礎→応用・Webページ作成(対象年齢 10-14歳)</p>
+                                    <p class="text-sm">4:00 PM - 7:00 PM （月－金）1時間</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lg:w-1/2 p-8 bg-white rounded-2xl shadow-xl border-t-8 border-green-500">
+                        <h3 class="text-2xl font-bold text-green-700 mb-4">シンプルな料金プラン</h3>
+                        <div class="space-y-4">
+                            <div class="border-b pb-3">
+                                <p class="text-xl font-bold text-gray-800">30分（ブロックプログラミング ）</p>
+                                <p class="text-3xl font-extrabold text-green-600">¥10,000 <span class="text-lg font-normal text-gray-500">/ 月 (4レッスン)</span></p>
+                            </div>
+                            <div class="border-b pb-3 bg-green-50 p-4 rounded-lg shadow-inner">
+                                <p class="text-xl font-bold text-gray-800">1時間（Python基礎→応用・Webページ作成）</p>
+                                <p class="text-3xl font-extrabold text-green-600">¥20,000 <span class="text-lg font-normal text-gray-500">/ 月 (4レッスン)</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="#contact" class="inline-block px-8 py-4 text-xl font-bold text-white bg-indigo-600 rounded-xl hover:bg-indigo-700 transition duration-300 shadow-xl shadow-indigo-300/50"> 無料体験レッスンから始めましょう！ </a>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-4xl font-extrabold text-gray-900 mb-12">まずはお問い合わせください</h2>
+                <div class="max-w-3xl mx-auto bg-gray-50 p-8 rounded-3xl shadow-2xl border-t-4 border-yellow-500">
+                    <form id="registrationForm" action="https://formspree.io/f/xkgqkyjg" method="POST" class="space-y-6">
+                        <div>
+                            <label for="parent_name" class="block text-sm font-medium text-gray-700">保護者様のお名前</label>
+                            <input type="text" id="parent_name" name="parent_name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-yellow-500 focus:border-yellow-500">
+                        </div>
+                        <div>
+                            <label for="child_age" class="block text-sm font-medium text-gray-700">お子様の年齢</label>
+                            <select id="child_age" name="child_age" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-yellow-500 focus:border-yellow-500">
+                                <option value="">コースを選択</option>
+                                <option value="7-9">ブロックプログラミング</option>
+                                <option value="10-13">Python基礎→応用・Webページ作成</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">メールアドレス</label>
+                            <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-yellow-500 focus:border-yellow-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">ご質問・メッセージ</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-yellow-500 focus:border-yellow-500"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button id="submitButton" type="submit" class="w-full sm:w-auto px-10 py-4 text-xl font-bold text-white bg-yellow-500 rounded-xl hover:bg-yellow-600 transition duration-300 shadow-lg shadow-yellow-300/50">
+                                 送信する
+                            </button>
+
+                            <p id="statusMessage" class="mt-4 text-center text-sm font-medium"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
+            <div>
+                <a href="#" class="text-2xl font-extrabold text-indigo-400 tracking-wider">&lt;CodeKids&gt;</a>
+                <p class="mt-4 text-sm text-gray-400">次世代のイノベーターを、１行のコードから育成します。</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4 text-white">ナビゲーション</h3>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#courses" class="hover:text-indigo-400">コース</a></li>
+                    <li><a href="#tutors" class="hover:text-indigo-400">講師紹介</a></li>
+                    <li><a href="#schedule" class="hover:text-indigo-400">料金とスケジュール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-12 border-t border-gray-700 pt-8 text-center">
+            <p class="text-sm text-gray-500">&copy; 2025 CodeKids Academy. 無断転載を禁じます。</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('nav a');
+            const registrationForm = document.getElementById('registrationForm');
+            const statusMessage = document.getElementById('statusMessage');
+            const submitButton = document.getElementById('submitButton');
+            // 1. モバイルメニューのトグル (前回からの維持)
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            // 2. リンククリック後にモバイルメニューを非表示にする (前回からの維持)
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+            // 3. スムーススクロールを実装 (前回からの維持)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href.length > 1) {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(href);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - document.querySelector('header').offsetHeight,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            // 4. *** 新しいフォーム送信ロジック ***
+            if (registrationForm) {
+                registrationForm.addEventListener('submit', async (e) => {
+                    // ページの再読み込みを防ぐ
+                    e.preventDefault();
+                    statusMessage.textContent = '送信中です...';
+                    statusMessage.className = 'mt-4 text-center text-sm font-medium text-indigo-600';
+                    submitButton.disabled = true; // 二重送信防止
+                    // フォームデータをJSONオブジェクトに変換
+                    const formData = new FormData(registrationForm);
+                    const data = Object.fromEntries(formData.entries());
+                    // *** ここがサーバーとの通信ポイントです ***
+                    // 実際には、このURLをメール送信処理を行うサーバーエンドポイントに置き換える必要があります
+                    const API_ENDPOINT = "https://formspree.io/f/xkgqkyjg";
+                    try {
+                        // サーバーへデータを送信
+                        const response = await fetch(API_ENDPOINT, {
+                            method: 'POST',
+                            headers: {
+                                'Accept': 'application/json',
+                            },
+                            body: new FormData(registrationForm)
+                        });
+                        if (response.ok) {
+                            // 成功した場合の処理 (ステータスコード 200-299)
+                            statusMessage.textContent = 'メッセージを送信いたしました。担当者が返信いたしますのでしばしお待ちください。';
+                            statusMessage.className = 'mt-4 text-center text-sm font-bold text-green-600';
+                            registrationForm.reset(); // フォームをクリア
+                        } else {
+                            // サーバー側でエラーが発生した場合の処理
+                            const errorData = await response.json();
+                            statusMessage.textContent = `送信エラー: ${errorData.message || 'サーバーで問題が発生しました。'}`;
+                            statusMessage.className = 'mt-4 text-center text-sm font-bold text-red-600';
+                        }
+                    } catch (error) {
+                        // ネットワークエラーなどが発生した場合の処理
+                        console.error('Fetch Error:', error);
+                        statusMessage.textContent = 'ネットワークエラーにより送信できませんでした。再度お試しください。';
+                        statusMessage.className = 'mt-4 text-center text-sm font-bold text-red-600';
+                    } finally {
+                        submitButton.disabled = false;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
